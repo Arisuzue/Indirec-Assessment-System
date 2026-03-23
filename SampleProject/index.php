@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-image: url('background/BGlogin.jpg');
+            background-image: url('background/LoginBG.jpg');
             background-size: cover;
         }
     </style>
