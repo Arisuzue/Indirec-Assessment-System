@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indirect Assessment System - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box active" id="login-form">
+            <form id="loginForm">
+                <h2>Login</h2>
+
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <label for="login-password">Password</label>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="login-password" name="password" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword('login-password')"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="wave-btn">
+                    <span class="btn-text">Login</span>
+                    <span class="wave"></span>
+                </button>
+
+                <p id="register-link">Don't have an account? <a href="#" onclick="showForm('register-form')">Register</a></p>
+            </form>
+        </div>
+
+        <div class="form-box" id="register-form">
+            <form id="registerForm">
+                <h2>Register</h2>
+
+                <label for="first_name">First Name</label>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="first_name" name="first_name" required>
+                    </div>
+                </div>
+
+                <label for="last_name">Last Name</label>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="last_name" name="last_name" required>
+                    </div>
+                </div>
+
+                <label for="email_address">Email Address</label>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email_address" name="email_address" required>
+                    </div>
+                </div>
+
+                <label for="program">Program</label>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <select id="program" name="Program" required>
+                            <option value="">Select Program</option>
+                            <option value="BSCPE">Bachelor of Science in Computer Engineering</option>
+                            <option value="BSCE">Bachelor of Science in Civil Engineering</option>
+                            <option value="BSECE">Bachelor of Science in Electronics Engineering</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="student_id">School ID</label>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-id-card input-icon"></i>
+                        <input type="text" id="student_id" name="School_id" required>
+                    </div>
+                </div>
+
+                <button type="submit" name="register" class="wave-btn">
+                    <span class="btn-text">Register</span>
+                    <span class="wave"></span>
+                </button>
+
+                <p>Already have an account? <a href="#" onclick="showForm('login-form'); document.getElementById('register-link').style.display = 'block';">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indirect Assessment System - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Indirect Assessment</h3>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item active" data-page="home">
+                    <img src="../icons/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Home">
+                    <span>Home</span>
+                </li>
+                <li class="nav-item" data-page="profile">
+                    <img src="../icons/note_alt_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Profile">
+                    <span>Profile</span>
+                </li>
+                <li class="nav-item" data-page="assessments">
+                    <img src="../icons/topic_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Assessments">
+                    <span>Assessments</span>
+                </li>
+                <li class="nav-item" data-page="charts">
+                    <img src="../icons/chart_data_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Charts">
+                    <span>Charts</span>
+                </li>
+                <li class="nav-item" data-page="data">
+                    <img src="../icons/dataset_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Data">
+                    <span>Data</span>
+                </li>
+                <li class="nav-item" data-page="topics">
+                    <img src="../icons/create_new_folder_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Topics">
+                    <span>Topics</span>
+                </li>
+                <li class="nav-item logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="page-title">Home</h1>
+            </header>
+
+            <!-- Home Page -->
+            <section id="home" class="content-section active">
+                <div class="welcome-card">
+                    <h2>Welcome to Indirect Assessment System</h2>
+                    <p>Track your academic performance and assessments.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>5</h3>
+                            <p>Assessments</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>92%</h3>
+                            <p>Average Score</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>3</h3>
+                            <p>Active Topics</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Page -->
+            <section id="profile" class="content-section">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <img src="../Images/LoginB.png" alt="Avatar" class="avatar">
+                        <h2 id="user-name">User Name</h2>
+                        <p id="user-program">-</p>
+                        <p id="user-id">-</p>
+                    </div>
+                    <div class="profile-info">
+                        <div class="info-row">
+                            <span>Email:</span>
+                            <span id="user-email">-</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assessments Page -->
+            <section id="assessments" class="content-section">
+                <h2>Recent Assessments</h2>
+                <div class="assessment-list">
+                    <div class="assessment-item">
+                        <h4>Programming Fundamentals</h4>
+                        <p>Score: 95% | Date: 2024-01-15</p>
+                    </div>
+                    <div class="assessment-item">
+                        <h4>Data Structures</h4>
+                        <p>Score: 88% | Date: 2024-01-10</p>
+                    </div>
+                </div>
+                <button class="new-assessment-btn">New Assessment</button>
+            </section>
+
+            <!-- Charts Page -->
+            <section id="charts" class="content-section">
+                <h2>Performance Charts</h2>
+                <div class="chart-container">
+                    <canvas id="performanceChart" width="400" height="200"></canvas>
+                    <p>Performance trend (add Chart.js for real charts)</p>
+                </div>
+            </section>
+
+            <!-- Data Page -->
+            <section id="data" class="content-section">
+                <h2>Dataset</h2>
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Topic</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Algorithms</td>
+                                <td>92%</td>
+                                <td>2024-01-15</td>
+                            </tr>
+                            <tr>
+                                <td>Databases</td>
+                                <td>87%</td>
+                                <td>2024-01-12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Topics Page -->
+            <section id="topics" class="content-section">
+                <h2>Topics & Folders</h2>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <i class="fas fa-folder"></i>
+                        <h4>Programming</h4>
+                        <p>8 assessments</p>
+                    </div>
+                    <div class="topic-card">
+                        <i class="fas fa-folder"></i>
+                        <h4>Mathematics</h4>
+                        <p>5 assessments</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

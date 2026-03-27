@@ -12,7 +12,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    background-image: url('Images/LogBG.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #333;
 }
 
@@ -30,6 +34,12 @@ body {
     display: none;
 }
 
+#register-form.form-box {
+    max-width: 380px;
+    padding: 15px;
+    transform: translateY(45px);
+}
+
 .form-box.active {
     display: block;
 }
@@ -40,9 +50,48 @@ h2 {
     margin-bottom: 20px;
 }
 
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+    font-size: 14px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1;
+    background: none;
+    border: none;
+}
+
 input, select {
     width: 100%;
-    padding: 10px;
+    padding: 12px 12px 12px 50px;
     background: #eee;
     margin: 10px 0;
     border: none;
@@ -50,25 +99,72 @@ input, select {
     outline: none;
     font-size: 16px;
     color: #333;
-    margin-bottom: 20px;
 }
 
+/* BUTTON STYLES */
+
 button {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    padding: 12px;
-    background: #7494ec;
-    color: #fff;
+    padding: 12px 30px;
+    background: #FFB74D;
+    color: #333;
     border: none;
     border-radius: 6px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    transition: 0.5s;
     margin-bottom: 20px;
+    z-index: 1;
+    transition: color 0.3s ease;
 }
 
-button:hover {
-    background: #6884d3;
+/* WAVE ELEMENT */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F57C00;
+
+    /* splash feel */
+    border-radius: 50% 50% 0 0;
+
+    transform: translateY(100%) scale(1.2);
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: -1;
+}
+
+/* HOVER EFFECT */
+.wave-btn:hover .wave {
+    transform: translateY(0%) scale(1.2);
+}
+
+/* TEXT COLOR CHANGE */
+.wave-btn:hover {
+    color: #fff;
+}
+
+/* CLICK RIPPLE EFFECT */
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::before {
+    width: 300px;
+    height: 300px;
 }
 
 p {
@@ -84,4 +180,8 @@ p a {
 
 p a:hover {
     text-decoration: underline;
+}
+
+.login-container {
+    margin: 0 15px;
 }
